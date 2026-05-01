@@ -144,9 +144,9 @@
 
     .seal { border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .seal.side { width: 80px; height: 80px; }
-    .seal.side svg { width: 80px; height: 80px; }
+    .seal.side svg, .seal.side img { width: 80px; height: 80px; object-fit: contain; }
     .seal.center { width: 130px; height: 130px; }
-    .seal.center svg { width: 130px; height: 130px; }
+    .seal.center svg, .seal.center img { width: 130px; height: 130px; object-fit: contain; }
 
     .hero-heading {
       text-align: center;
@@ -510,7 +510,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 24px;
     }
 
@@ -520,6 +520,8 @@
       border-radius: 12px;
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
     }
 
     .service-card:hover {
@@ -533,7 +535,7 @@
       margin-bottom: 28px;
     }
 
-    .service-seal svg { width: 56px; height: 56px; }
+    .service-seal svg, .service-seal img { width: 56px; height: 56px; object-fit: contain; }
 
     .service-card h3 {
       font-family: var(--font-serif);
@@ -551,7 +553,8 @@
 
     .service-tag {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: auto;
+      padding-top: 20px;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -789,9 +792,9 @@
       .seals { margin-top: 80px; gap: 24px; }
       .hero-sub { margin-bottom: 0; }
       .seal.side { width: 50px; height: 50px; }
-      .seal.side svg { width: 50px; height: 50px; }
+      .seal.side svg, .seal.side img { width: 50px; height: 50px; }
       .seal.center { width: 90px; height: 90px; }
-      .seal.center svg { width: 90px; height: 90px; }
+      .seal.center svg, .seal.center img { width: 90px; height: 90px; }
       .nav-inner { padding: 15px 24px; }
       .nav-left { font-size: 12px; }
       .flag-container { margin-top: auto; margin-bottom: auto; height: auto; min-height: unset; align-items: center; }
@@ -819,85 +822,15 @@
   <div class="hero">
     <div class="seals">
       <div class="seal side">
-        <svg viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-          <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="1" fill="none"/>
-          <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.8" fill="#1a3a6b" fill-opacity="0.06"/>
-          <text x="50" y="48" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="serif">&lt;/&gt;</text>
-          <defs><path id="sealWebT" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-          <text font-size="5.5" fill="#1a3a6b" font-family="serif" letter-spacing="2.5">
-            <textPath href="#sealWebT" startOffset="50%" text-anchor="middle">WEBSITES</textPath>
-          </text>
-          <defs><path id="sealWebB" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-          <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2">
-            <textPath href="#sealWebB" startOffset="50%" text-anchor="middle">DIVISION</textPath>
-          </text>
-        </svg>
+        <img src="img/WebsitesAA.png" alt="Websites Division seal">
       </div>
 
       <div class="seal center">
-        <svg viewBox="0 0 100 100" fill="none">
-          <defs>
-            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#d4a843"/><stop offset="50%" stop-color="#e0c068"/><stop offset="100%" stop-color="#a8822a"/>
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="47" stroke="url(#goldGrad)" stroke-width="2.5" fill="none"/>
-          <circle cx="50" cy="50" r="43" stroke="url(#goldGrad)" stroke-width="1" fill="none"/>
-          <g stroke="url(#goldGrad)" stroke-width="0.8">
-            <line x1="50" y1="3" x2="50" y2="7"/><line x1="58" y1="3.5" x2="57" y2="7.4"/>
-            <line x1="66" y1="5.5" x2="64" y2="9.2"/><line x1="73" y1="9" x2="70" y2="12.2"/>
-            <line x1="79" y1="14" x2="76" y2="16.8"/><line x1="84" y1="20" x2="80" y2="22.2"/>
-            <line x1="87" y1="27" x2="83" y2="28.5"/><line x1="89" y1="34" x2="85" y2="35"/>
-            <line x1="90" y1="42" x2="86" y2="42"/><line x1="90" y1="50" x2="86" y2="50"/>
-            <line x1="90" y1="58" x2="86" y2="58"/><line x1="89" y1="66" x2="85" y2="65"/>
-            <line x1="87" y1="73" x2="83" y2="71.5"/><line x1="84" y1="80" x2="80" y2="77.8"/>
-            <line x1="79" y1="86" x2="76" y2="83.2"/><line x1="73" y1="91" x2="70" y2="87.8"/>
-            <line x1="66" y1="94.5" x2="64" y2="90.8"/><line x1="58" y1="96.5" x2="57" y2="92.6"/>
-            <line x1="50" y1="97" x2="50" y2="93"/><line x1="42" y1="96.5" x2="43" y2="92.6"/>
-            <line x1="34" y1="94.5" x2="36" y2="90.8"/><line x1="27" y1="91" x2="30" y2="87.8"/>
-            <line x1="21" y1="86" x2="24" y2="83.2"/><line x1="16" y1="80" x2="20" y2="77.8"/>
-            <line x1="13" y1="73" x2="17" y2="71.5"/><line x1="11" y1="66" x2="15" y2="65"/>
-            <line x1="10" y1="58" x2="14" y2="58"/><line x1="10" y1="50" x2="14" y2="50"/>
-            <line x1="10" y1="42" x2="14" y2="42"/><line x1="11" y1="34" x2="15" y2="35"/>
-            <line x1="13" y1="27" x2="17" y2="28.5"/><line x1="16" y1="20" x2="20" y2="22.2"/>
-            <line x1="21" y1="14" x2="24" y2="16.8"/><line x1="27" y1="9" x2="30" y2="12.2"/>
-            <line x1="34" y1="5.5" x2="36" y2="9.2"/><line x1="42" y1="3.5" x2="43" y2="7.4"/>
-          </g>
-          <circle cx="50" cy="50" r="36" stroke="url(#goldGrad)" stroke-width="0.8" fill="none"/>
-          <path d="M50 38 L47 44 L40 44 L38 48 L42 50 L39 54 L43 55 L46 52 L50 56 L54 52 L57 55 L61 54 L58 50 L62 48 L60 44 L53 44 Z" fill="url(#goldGrad)" fill-opacity="0.7" stroke="url(#goldGrad)" stroke-width="0.6"/>
-          <circle cx="50" cy="37" r="2.5" fill="url(#goldGrad)" fill-opacity="0.8"/>
-          <path d="M40 44 L32 40 L30 42 L36 46" stroke="url(#goldGrad)" stroke-width="0.8" fill="url(#goldGrad)" fill-opacity="0.3"/>
-          <path d="M60 44 L68 40 L70 42 L64 46" stroke="url(#goldGrad)" stroke-width="0.8" fill="url(#goldGrad)" fill-opacity="0.3"/>
-          <text x="50" y="31" text-anchor="middle" font-size="3.5" fill="url(#goldGrad)" letter-spacing="1">★ ★ ★ ★ ★</text>
-          <defs><path id="topArcC" d="M12,50 a38,38 0 0,1 76,0"/></defs>
-          <text font-size="5.2" fill="url(#goldGrad)" font-family="serif" letter-spacing="2.5" font-weight="600">
-            <textPath href="#topArcC" startOffset="50%" text-anchor="middle">THE AMERICAN AGENCY</textPath>
-          </text>
-          <defs><path id="botArcC" d="M14,54 a37,37 0 0,0 72,0"/></defs>
-          <text font-size="5" fill="url(#goldGrad)" font-family="serif" letter-spacing="2">
-            <textPath href="#botArcC" startOffset="50%" text-anchor="middle">THE NETHERLANDS</textPath>
-          </text>
-          <circle cx="13" cy="50" r="1.2" fill="url(#goldGrad)"/>
-          <circle cx="87" cy="50" r="1.2" fill="url(#goldGrad)"/>
-        </svg>
+        <img src="img/AiAA.png" alt="The American Agency seal">
       </div>
 
       <div class="seal side">
-        <svg viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-          <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="1" fill="none"/>
-          <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.8" fill="#1a3a6b" fill-opacity="0.06"/>
-          <text x="50" y="50" text-anchor="middle" font-size="14" fill="#1a3a6b" font-family="serif">⚡</text>
-          <defs><path id="sealAIT" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-          <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2">
-            <textPath href="#sealAIT" startOffset="50%" text-anchor="middle">AI AUTOMATION</textPath>
-          </text>
-          <defs><path id="sealAIB" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-          <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2">
-            <textPath href="#sealAIB" startOffset="50%" text-anchor="middle">DIVISION</textPath>
-          </text>
-        </svg>
+        <img src="img/softwareAA.png" alt="Custom Software Division seal">
       </div>
     </div>
 
@@ -1050,74 +983,29 @@
 
         <div class="service-card reveal">
           <div class="service-seal">
-            <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-              <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="0.8" fill="none"/>
-              <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.6" fill="#1a3a6b" fill-opacity="0.05"/>
-              <text x="50" y="50" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="serif">&lt;/&gt;</text>
-              <defs><path id="s1t" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2.5"><textPath href="#s1t" startOffset="50%" text-anchor="middle">WEBSITES</textPath></text>
-              <defs><path id="s1b" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s1b" startOffset="50%" text-anchor="middle">DIVISION</textPath></text>
-            </svg>
+            <img src="img/WebsitesAA.png" alt="Websites Division seal">
           </div>
-          <h3>Websites</h3>
-          <p>Fast sites that actually convert. We don't do six-month timelines or template compromises. You get a website built in weeks, designed around what makes people buy, not what looks nice in a Figma file.</p>
+          <h3>Grow Revenue</h3>
+          <p>Most Dutch companies treat their website like a brochure. American companies treat it like their best salesperson.</p>
           <span class="service-tag">↗ Conversion-first</span>
         </div>
 
         <div class="service-card reveal">
           <div class="service-seal">
-            <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-              <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="0.8" fill="none"/>
-              <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.6" fill="#1a3a6b" fill-opacity="0.05"/>
-              <text x="50" y="51" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="serif">⚙</text>
-              <defs><path id="s2t" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2.5"><textPath href="#s2t" startOffset="50%" text-anchor="middle">OPERATIONS</textPath></text>
-              <defs><path id="s2b" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s2b" startOffset="50%" text-anchor="middle">DIVISION</textPath></text>
-            </svg>
+            <img src="img/AiAA.png" alt="AI Automation Division seal">
           </div>
-          <h3>Operations</h3>
-          <p>Most Dutch companies lose hours a week to processes that should take minutes. We find those leaks, fix them, and automate what's left. Same playbooks US companies use to scale without hiring.</p>
-          <span class="service-tag">↗ Time-to-value</span>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-seal">
-            <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-              <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="0.8" fill="none"/>
-              <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.6" fill="#1a3a6b" fill-opacity="0.05"/>
-              <text x="50" y="51" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="serif">◆</text>
-              <defs><path id="s3t" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s3t" startOffset="50%" text-anchor="middle">CUSTOM SOFTWARE</textPath></text>
-              <defs><path id="s3b" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s3b" startOffset="50%" text-anchor="middle">DIVISION</textPath></text>
-            </svg>
-          </div>
-          <h3>Custom Software</h3>
-          <p>You probably pay for five SaaS tools that each do 20% of what you need. We build the one thing that does 100%, tuned to how your team actually works. You own it.</p>
-          <span class="service-tag">↗ Built to own</span>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-seal">
-            <svg viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="47" stroke="#1a3a6b" stroke-width="2" fill="none"/>
-              <circle cx="50" cy="50" r="42" stroke="#1a3a6b" stroke-width="0.8" fill="none"/>
-              <circle cx="50" cy="50" r="30" stroke="#1a3a6b" stroke-width="0.6" fill="#1a3a6b" fill-opacity="0.05"/>
-              <text x="50" y="50" text-anchor="middle" font-size="16" fill="#1a3a6b" font-family="serif">⚡</text>
-              <defs><path id="s4t" d="M15,50 a35,35 0 0,1 70,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s4t" startOffset="50%" text-anchor="middle">AI AUTOMATION</textPath></text>
-              <defs><path id="s4b" d="M17,54 a34,34 0 0,0 66,0"/></defs>
-              <text font-size="5" fill="#1a3a6b" font-family="serif" letter-spacing="2"><textPath href="#s4b" startOffset="50%" text-anchor="middle">DIVISION</textPath></text>
-            </svg>
-          </div>
-          <h3>AI Automation</h3>
-          <p>77% of Dutch companies haven't touched AI yet. US firms are already on their second wave. We put AI where it actually saves you money or makes you money. That's it. No buzzwords.</p>
+          <h3>Cut Costs</h3>
+          <p>77% of Dutch companies haven't touched AI yet. US firms are already on their second wave. We put AI where it actually saves you money or makes you money.</p>
           <span class="service-tag">↗ ROI-proven</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-seal">
+            <img src="img/softwareAA.png" alt="Custom Software Division seal">
+          </div>
+          <h3>Fix Operations</h3>
+          <p>Most Dutch companies lose hours a week to processes that should take minutes. We find those leaks, fix them, and automate what's left.</p>
+          <span class="service-tag">↗ Built to own</span>
         </div>
 
       </div>
