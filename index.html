@@ -479,165 +479,171 @@
       color: var(--gray);
     }
 
-    /* ───── STATS ORBITAL ───── */
-    .stats { background: var(--bg-alt); color: var(--dark); overflow: hidden; }
-    .stats .section-inner { text-align: center; }
-
-    .stats-tagline {
-      font-family: var(--font-serif);
-      font-size: clamp(20px, 2.5vw, 28px);
+    /* ───── STATS NETWORK ───── */
+    .stats {
+      background: var(--white);
       color: var(--dark);
-      margin-bottom: 64px;
-      border: 1px solid rgba(0,0,0,0.12);
-      display: inline-block;
-      padding: 10px 28px;
-      border-radius: 2px;
-      transition: opacity 0.4s ease;
+      overflow: hidden;
+      padding-top: 80px;
+      padding-bottom: 0;
     }
 
-    .stats-orbit {
+    .stats .section-inner {
+      text-align: center;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .stats-heading {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 0;
+      transition: opacity 0.45s ease;
+      max-width: var(--max-w);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stats-network {
       position: relative;
       width: 100%;
-      max-width: 800px;
+      max-width: var(--max-w);
       margin: 0 auto;
-      height: 340px;
+      height: clamp(400px, 50vw, 600px);
     }
 
-    .orbit-arcs {
+    .stats-network-bg {
       position: absolute;
       inset: 0;
       pointer-events: none;
+      display: flex;
+      justify-content: center;
     }
 
-    .orbit-arcs svg {
+    .stats-network-bg svg {
       width: 100%;
       height: 100%;
     }
 
-    .orbit-logo {
+    .network-icon {
       position: absolute;
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: clamp(40px, 4.5vw, 64px);
+      height: clamp(40px, 4.5vw, 64px);
+      border-radius: 16px;
       background: #fff;
       border: 1px solid rgba(0,0,0,0.08);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-sans);
-      font-size: 11px;
+      font-size: clamp(9px, 1vw, 12px);
       font-weight: 600;
       color: var(--gray);
       cursor: pointer;
-      transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.4s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s ease, opacity 0.6s ease;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
       z-index: 2;
     }
 
-    .orbit-logo:hover { transform: scale(1.1); }
+    .network-icon:hover { transform: scale(1.12); }
 
-    .orbit-logo.active {
-      border-color: var(--blue);
-      box-shadow: 0 4px 20px rgba(0,40,104,0.15);
-      transform: scale(1.15);
+    .network-icon.active {
+      box-shadow: 0 4px 24px rgba(0,40,104,0.18);
+      transform: scale(1.18);
+      border-color: rgba(0,40,104,0.2);
     }
 
-    .orbit-logo img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-    }
-
-    .stats-center {
+    .stats-row {
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      z-index: 3;
-    }
-
-    .stats-center-label {
-      font-size: 13px;
-      color: var(--blue);
-      letter-spacing: 0.02em;
-      margin-bottom: 4px;
-      transition: opacity 0.4s ease;
-    }
-
-    .stats-center-number {
-      font-family: var(--font-serif);
-      font-size: clamp(64px, 8vw, 100px);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--blue);
-      transition: opacity 0.4s ease;
-    }
-
-    .stats-sides {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: clamp(40px, 8vw, 120px);
-      position: absolute;
-      bottom: 0;
+      bottom: 40px;
       left: 0;
       right: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: clamp(24px, 6vw, 80px);
       z-index: 3;
     }
 
-    .stats-side {
+    .stat-col {
       text-align: center;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.45s ease;
     }
 
-    .stats-side-label {
-      font-size: 12px;
+    .stat-col-label {
+      font-size: clamp(11px, 1vw, 13px);
       color: var(--gray);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
     }
 
-    .stats-side-number {
+    .stat-col-number {
       font-family: var(--font-serif);
-      font-size: clamp(28px, 3vw, 40px);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      line-height: 1;
       color: var(--dark);
     }
 
-    .stats-description {
-      max-width: 600px;
-      margin: 32px auto 0;
-      font-size: 15px;
+    .stat-col.small .stat-col-number {
+      font-size: clamp(28px, 3.5vw, 44px);
+    }
+
+    .stat-col.big .stat-col-label {
+      color: var(--blue);
+    }
+
+    .stat-col.big .stat-col-number {
+      font-size: clamp(56px, 8vw, 110px);
+      color: var(--blue);
+    }
+
+    .stats-footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 24px 0 48px;
+      text-align: center;
+    }
+
+    .stats-desc {
+      font-size: 14px;
       line-height: 1.6;
       color: var(--gray);
-      transition: opacity 0.4s ease;
+      max-width: 520px;
+      margin: 0 auto;
+      transition: opacity 0.45s ease;
     }
 
-    .stats-source {
+    .stats-src {
       font-size: 12px;
       color: var(--gray-light);
-      margin-top: 8px;
+      margin-top: 6px;
+      transition: opacity 0.45s ease;
     }
 
-    .stats-dots {
+    .stats-nav {
       display: flex;
       justify-content: center;
       gap: 8px;
-      margin-top: 32px;
+      margin-top: 20px;
     }
 
-    .stats-dot {
-      width: 8px;
-      height: 8px;
+    .stats-nav-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: rgba(0,0,0,0.12);
+      background: rgba(0,0,0,0.1);
       cursor: pointer;
       transition: background 0.3s, transform 0.3s;
+      border: none;
+      padding: 0;
     }
 
-    .stats-dot.active {
+    .stats-nav-dot.active {
       background: var(--blue);
-      transform: scale(1.25);
+      transform: scale(1.3);
     }
 
     /* ───── SERVICES ───── */
@@ -916,9 +922,10 @@
       section { padding: 100px 24px; }
       .nav-inner { padding: 12px 20px; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .stats-orbit { height: 280px; }
-      .orbit-logo { width: 40px; height: 40px; font-size: 9px; border-radius: 10px; }
-      .stats-tagline { font-size: 18px; padding: 8px 20px; margin-bottom: 40px; }
+      .stats { padding-top: 60px; }
+      .stats-network { height: 340px; }
+      .stats-row { bottom: 20px; }
+      .network-icon { border-radius: 12px; }
       .services-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr; gap: 32px; }
       .service-card { padding: 32px; }
@@ -1074,50 +1081,69 @@
   <!-- STATS -->
   <section class="stats">
     <div class="section-inner reveal">
-      <div class="stats-tagline" id="statsTagline">US workers are adopting AI twice as fast</div>
+      <h2 class="stats-heading" id="statsHeading">US workers are adopting AI twice as fast</h2>
 
-      <div class="stats-orbit" id="statsOrbit">
-        <div class="orbit-arcs">
-          <svg viewBox="0 0 800 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="400" cy="360" rx="380" ry="260" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
-            <ellipse cx="400" cy="360" rx="300" ry="200" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
-            <ellipse cx="400" cy="360" rx="220" ry="140" stroke="rgba(0,0,0,0.03)" stroke-width="1"/>
+      <div class="stats-network">
+        <div class="stats-network-bg">
+          <svg viewBox="0 0 1100 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+            <line x1="550" y1="0" x2="550" y2="320" stroke="#B2D5FF" stroke-width="1"/>
+            <path d="M0 600C0 340 246 130 550 130" stroke="#B2D5FF" stroke-width="1"/>
+            <path d="M1100 600C1100 340 854 130 550 130" stroke="#B2D5FF" stroke-width="1"/>
+            <mask id="networkMask" maskUnits="userSpaceOnUse" x="120" y="200" width="860" height="400">
+              <rect x="120" y="200" width="860" height="400" fill="url(#networkFade)"/>
+            </mask>
+            <g mask="url(#networkMask)">
+              <path d="M310 580C270 545 265 520 263 500C262 480 265 468 272 456C280 440 293 422 311 403C347 365 400 324 470 287C540 250 598 219 645 203C692 187 729 186 752 209C812 270 815 376 787 472C759 568 698 658 630 696" stroke="#B2D5FF" stroke-width="1"/>
+              <path d="M670 700C710 720 712 708 747 692C819 657 869 594 878 524C879 512 876 497 869 481C862 465 850 447 834 429C802 397 752 362 684 324C616 286 558 254 515 237C472 220 438 218 416 240L415 241C362 299 359 399 385 495C411 591 471 681 539 696Z" stroke="#B2D5FF" stroke-width="1"/>
+              <path d="M920 580C920 400 752 260 550 260" stroke="#B2D5FF" stroke-width="1"/>
+              <path d="M180 580C180 400 348 260 550 260" stroke="#B2D5FF" stroke-width="1"/>
+              <ellipse cx="550" cy="520" rx="440" ry="280" stroke="#B2D5FF" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+              <ellipse cx="550" cy="520" rx="320" ry="200" stroke="#B2D5FF" stroke-width="1" stroke-dasharray="4 6" opacity="0.3"/>
+            </g>
+            <defs>
+              <linearGradient id="networkFade" x1="550" y1="200" x2="550" y2="600" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#fff"/>
+                <stop offset="0.75" stop-color="#fff" stop-opacity="0.5"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
           </svg>
         </div>
 
-        <div class="orbit-logo active" data-index="0" style="left:5%;top:52%">FED</div>
-        <div class="orbit-logo" data-index="1" style="left:18%;top:22%">BLS</div>
-        <div class="orbit-logo" data-index="2" style="left:38%;top:5%">S/G</div>
-        <div class="orbit-logo" data-index="3" style="left:56%;top:5%">CB</div>
-        <div class="orbit-logo" data-index="4" style="left:74%;top:22%">FS</div>
-        <div class="orbit-logo" data-index="5" style="left:90%;top:52%">OECD</div>
+        <div class="network-icon active" data-index="0" style="left:3%;top:48%">FED</div>
+        <div class="network-icon" data-index="1" style="left:15%;top:20%">BLS</div>
+        <div class="network-icon" data-index="2" style="left:33%;top:4%">S/G</div>
+        <div class="network-icon" data-index="3" style="left:55%;top:2%">CB</div>
+        <div class="network-icon" data-index="4" style="left:72%;top:14%">FS</div>
+        <div class="network-icon" data-index="5" style="left:90%;top:36%">OECD</div>
 
-        <div class="stats-sides">
-          <div class="stats-side" id="statLeft">
-            <div class="stats-side-label">EU AI adoption</div>
-            <div class="stats-side-number">33%</div>
+        <div class="stats-row">
+          <div class="stat-col small" id="statLeft">
+            <span class="stat-col-label">EU AI adoption</span>
+            <span class="stat-col-number">33%</span>
           </div>
-          <div class="stats-center" id="statCenter">
-            <div class="stats-center-label" id="statCenterLabel">US workers using AI at work</div>
-            <div class="stats-center-number" id="statCenterNum">43%</div>
+          <div class="stat-col big" id="statCenter">
+            <span class="stat-col-label" id="statCenterLabel">US workers using AI at work</span>
+            <span class="stat-col-number" id="statCenterNum">43%</span>
           </div>
-          <div class="stats-side" id="statRight">
-            <div class="stats-side-label">US AI work hours</div>
-            <div class="stats-side-number">5.2%</div>
+          <div class="stat-col small" id="statRight">
+            <span class="stat-col-label">US AI work hours</span>
+            <span class="stat-col-number">5.2%</span>
           </div>
         </div>
       </div>
 
-      <p class="stats-description" id="statsDesc">of US workers use AI at work. In the Netherlands, 33% of companies have adopted it. US workers spend 5.2% of all work hours on AI, roughly double the Dutch rate.</p>
-      <p class="stats-source" id="statsSource">St. Louis Fed / NBER, March 2026</p>
-
-      <div class="stats-dots" id="statsDots">
-        <div class="stats-dot active" data-index="0"></div>
-        <div class="stats-dot" data-index="1"></div>
-        <div class="stats-dot" data-index="2"></div>
-        <div class="stats-dot" data-index="3"></div>
-        <div class="stats-dot" data-index="4"></div>
-        <div class="stats-dot" data-index="5"></div>
+      <div class="stats-footer">
+        <p class="stats-desc" id="statsDesc">of US workers use AI at work. In the Netherlands, 33% of companies have adopted it. US workers spend 5.2% of all work hours on AI, roughly double the Dutch rate.</p>
+        <p class="stats-src" id="statsSrc">St. Louis Fed / NBER, March 2026</p>
+        <div class="stats-nav">
+          <button class="stats-nav-dot active" data-index="0"></button>
+          <button class="stats-nav-dot" data-index="1"></button>
+          <button class="stats-nav-dot" data-index="2"></button>
+          <button class="stats-nav-dot" data-index="3"></button>
+          <button class="stats-nav-dot" data-index="4"></button>
+          <button class="stats-nav-dot" data-index="5"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -1242,50 +1268,50 @@
     });
 
     const statsData = [
-      { tagline: 'US workers are adopting AI twice as fast', center: '43%', centerLabel: 'US workers using AI at work', left: '33%', leftLabel: 'EU AI adoption', right: '5.2%', rightLabel: 'US AI work hours', desc: 'of US workers use AI at work. In the Netherlands, 33% of companies have adopted it. US workers spend 5.2% of all work hours on AI, roughly double the Dutch rate.', source: 'St. Louis Fed / NBER, March 2026' },
-      { tagline: 'US productivity is pulling away from Europe', center: '2.2%', centerLabel: 'US productivity growth 2025', left: '1.4%', leftLabel: 'EU productivity growth', right: '~90%', rightLabel: 'US gains since 1995', desc: 'US productivity growth in 2025. The EU managed 1.4%. Since 1995, the US has grown productivity ~90%. Europe? About 30%.', source: 'BLS / Eurostat / OECD, 2025-2026' },
-      { tagline: 'Americans spend 5.5x more on enterprise software', center: '5.5x', centerLabel: 'US vs EU spend per employee', left: '$868', leftLabel: 'US per employee/yr', right: '$158', rightLabel: 'EU per employee/yr', desc: 'US enterprise software spending per employee ($868/yr) vs. Europe ($158/yr). The US market is $159B. Europe\'s is $71B.', source: 'Statista / Gartner, 2025-2026' },
-      { tagline: '64% of global startup funding goes to the US', center: '64%', centerLabel: 'Global VC funding to US', left: '$274B', leftLabel: 'Total funding 2025', right: '22%', rightLabel: 'Europe\'s share', desc: 'of global startup funding went to US companies in 2025. $274 billion total. Europe got 22% of that, despite comparable GDP.', source: 'Crunchbase, January 2026' },
-      { tagline: 'US corporate earnings keep compounding', center: '10.3%', centerLabel: 'S&P 500 revenue growth Q1 2026', left: 'Q1 \'26', leftLabel: 'Reporting period', right: 'S&P 500', rightLabel: 'Index', desc: 'S&P 500 revenue growth in Q1 2026. US companies keep compounding while European firms play catch-up on earnings.', source: 'FactSet Earnings Insight, April 2026' },
-      { tagline: 'The US outspends Europe on R&D every year', center: '3.5%', centerLabel: 'US R&D as % of GDP', left: '2.24%', leftLabel: 'EU actual R&D', right: '3%', rightLabel: 'EU target (missed)', desc: 'US R&D spending as % of GDP. The EU target is 3%. Their actual number: 2.24%. They\'ve been stuck there for years.', source: 'OECD / Eurostat, 2024-2025' }
+      { heading: 'US workers are adopting AI twice as fast', center: '43%', centerLabel: 'US workers using AI at work', left: '33%', leftLabel: 'EU AI adoption', right: '5.2%', rightLabel: 'US AI work hours', desc: 'of US workers use AI at work. In the Netherlands, 33% of companies have adopted it. US workers spend 5.2% of all work hours on AI, roughly double the Dutch rate.', source: 'St. Louis Fed / NBER, March 2026' },
+      { heading: 'US productivity is pulling away from Europe', center: '2.2%', centerLabel: 'US productivity growth 2025', left: '1.4%', leftLabel: 'EU productivity growth', right: '~90%', rightLabel: 'US gains since 1995', desc: 'US productivity growth in 2025. The EU managed 1.4%. Since 1995, the US has grown productivity ~90%. Europe? About 30%.', source: 'BLS / Eurostat / OECD, 2025-2026' },
+      { heading: 'Americans spend 5.5x more on enterprise software', center: '5.5x', centerLabel: 'US vs EU spend per employee', left: '$868', leftLabel: 'US per employee/yr', right: '$158', rightLabel: 'EU per employee/yr', desc: 'US enterprise software spending per employee ($868/yr) vs. Europe ($158/yr). The US market is $159B. Europe\'s is $71B.', source: 'Statista / Gartner, 2025-2026' },
+      { heading: '64% of global startup funding goes to the US', center: '64%', centerLabel: 'Global VC funding to US', left: '$274B', leftLabel: 'Total funding 2025', right: '22%', rightLabel: 'Europe\'s share', desc: 'of global startup funding went to US companies in 2025. $274 billion total. Europe got 22% of that, despite comparable GDP.', source: 'Crunchbase, January 2026' },
+      { heading: 'US corporate earnings keep compounding', center: '10.3%', centerLabel: 'S&P 500 revenue growth Q1 2026', left: 'Q1 \'26', leftLabel: 'Reporting period', right: 'S&P 500', rightLabel: 'Index', desc: 'S&P 500 revenue growth in Q1 2026. US companies keep compounding while European firms play catch-up on earnings.', source: 'FactSet Earnings Insight, April 2026' },
+      { heading: 'The US outspends Europe on R&D every year', center: '3.5%', centerLabel: 'US R&D as % of GDP', left: '2.24%', leftLabel: 'EU actual R&D', right: '3%', rightLabel: 'EU target (missed)', desc: 'US R&D spending as % of GDP. The EU target is 3%. Their actual number: 2.24%. They\'ve been stuck there for years.', source: 'OECD / Eurostat, 2024-2025' }
     ];
 
     let currentStat = 0;
-    const logos = document.querySelectorAll('.orbit-logo');
-    const dots = document.querySelectorAll('.stats-dot');
-    const tagline = document.getElementById('statsTagline');
-    const centerNum = document.getElementById('statCenterNum');
-    const centerLabel = document.getElementById('statCenterLabel');
-    const leftSide = document.getElementById('statLeft');
-    const rightSide = document.getElementById('statRight');
-    const descEl = document.getElementById('statsDesc');
-    const sourceEl = document.getElementById('statsSource');
+    const icons = document.querySelectorAll('.network-icon');
+    const navDots = document.querySelectorAll('.stats-nav-dot');
+    const headingEl = document.getElementById('statsHeading');
+    const cNum = document.getElementById('statCenterNum');
+    const cLabel = document.getElementById('statCenterLabel');
+    const sLeft = document.getElementById('statLeft');
+    const sRight = document.getElementById('statRight');
+    const dEl = document.getElementById('statsDesc');
+    const srcEl = document.getElementById('statsSrc');
 
     function setStats(i) {
-      const d = statsData[i];
-      const fadeEls = [tagline, centerNum, centerLabel, leftSide, rightSide, descEl, sourceEl];
-      fadeEls.forEach(el => el.style.opacity = '0');
-      logos.forEach(l => l.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-      logos[i].classList.add('active');
-      dots[i].classList.add('active');
+      const s = statsData[i];
+      const fade = [headingEl, cNum, cLabel, sLeft, sRight, dEl, srcEl];
+      fade.forEach(el => el.style.opacity = '0');
+      icons.forEach(ic => ic.classList.remove('active'));
+      navDots.forEach(d => d.classList.remove('active'));
+      icons[i].classList.add('active');
+      navDots[i].classList.add('active');
       setTimeout(() => {
-        tagline.textContent = d.tagline;
-        centerNum.textContent = d.center;
-        centerLabel.textContent = d.centerLabel;
-        leftSide.querySelector('.stats-side-label').textContent = d.leftLabel;
-        leftSide.querySelector('.stats-side-number').textContent = d.left;
-        rightSide.querySelector('.stats-side-label').textContent = d.rightLabel;
-        rightSide.querySelector('.stats-side-number').textContent = d.right;
-        descEl.textContent = d.desc;
-        sourceEl.textContent = d.source;
-        fadeEls.forEach(el => el.style.opacity = '1');
-      }, 350);
+        headingEl.textContent = s.heading;
+        cNum.textContent = s.center;
+        cLabel.textContent = s.centerLabel;
+        sLeft.querySelector('.stat-col-label').textContent = s.leftLabel;
+        sLeft.querySelector('.stat-col-number').textContent = s.left;
+        sRight.querySelector('.stat-col-label').textContent = s.rightLabel;
+        sRight.querySelector('.stat-col-number').textContent = s.right;
+        dEl.textContent = s.desc;
+        srcEl.textContent = s.source;
+        fade.forEach(el => el.style.opacity = '1');
+      }, 400);
       currentStat = i;
     }
 
-    logos.forEach(l => l.addEventListener('click', () => { setStats(+l.dataset.index); resetInterval(); }));
-    dots.forEach(d => d.addEventListener('click', () => { setStats(+d.dataset.index); resetInterval(); }));
+    icons.forEach(ic => ic.addEventListener('click', () => { setStats(+ic.dataset.index); resetInterval(); }));
+    navDots.forEach(d => d.addEventListener('click', () => { setStats(+d.dataset.index); resetInterval(); }));
 
     let statsInterval = setInterval(() => setStats((currentStat + 1) % 6), 5000);
     function resetInterval() { clearInterval(statsInterval); statsInterval = setInterval(() => setStats((currentStat + 1) % 6), 5000); }
