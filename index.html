@@ -474,6 +474,121 @@
       }
     }
 
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--white);
+      width: 90%;
+      max-width: 420px;
+      padding: 40px 36px;
+      position: relative;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--gray);
+      font-family: 'Instrument Serif', serif;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--dark);
+    }
+
+    .modal h2 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .modal p {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--dark);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #d0d0cc;
+      background: #fff;
+      font-family: 'Instrument Serif', serif;
+      font-size: 15px;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group input::placeholder {
+      color: #b0b0a8;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      font-family: 'Instrument Serif', serif;
+      font-size: 16px;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      margin-top: 8px;
+      transition: background 0.25s;
+    }
+
+    .submit-btn:hover {
+      background: var(--red);
+    }
+
     @media (max-width: 600px) {
       .flag-container {
         margin-top: auto;
@@ -671,5 +786,42 @@
     </div>
 
   </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h2>Apply Now</h2>
+      <p>Start unlocking American processes for your company.</p>
+      <form id="applyForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="john@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    document.querySelector('.apply-btn').addEventListener('click', () => modal.classList.add('active'));
+    document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+    document.getElementById('applyForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      console.log('Application:', data);
+      e.target.innerHTML = '<p style="text-align:center;font-size:18px;color:#1a1a1a;padding:20px 0;">Application received.<br>We\'ll be in touch.</p>';
+      setTimeout(() => { modal.classList.remove('active'); }, 2500);
+    });
+  </script>
 </body>
 </html>
