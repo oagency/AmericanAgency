@@ -70,12 +70,20 @@
       transition: background 0.3s;
     }
 
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
     .nav-inner {
       margin: 0 auto;
       padding: 25px 48px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
       position: relative;
     }
 
@@ -810,6 +818,7 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
+      <a href="/" class="nav-logo">AA</a>
       <div class="nav-left">
         <span class="nav-flag"><span></span><span></span><span></span></span>
         <span>Bringing American urgency to Dutch business.</span>
